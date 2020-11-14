@@ -1,0 +1,61 @@
+:root {
+    --primary: #3949D7;
+}
+
+.min-vh-w-100 {
+    min-width: 100%;
+    min-height: 100vh;
+}
+
+#container-login {
+    background: url("../img/login-background.png") no-repeat center;
+    min-width: 100%;
+    min-height: 100vh;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-container {
+    width: 510px;
+    padding: 20px 0 ;
+  
+    background-color: rgba(255,255,255, 0.9);
+    border-radius: 10px;
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="text"], input[type="password"] {
+    border: none;
+    border-bottom: 1px solid var(--primary);
+    background: none;
+}
+
+.button-primary {
+    border: 1px solid transparent;
+    background-color: var(--primary);
+    color: white;
+    padding: 6px 10px;
+    border-radius: 4px;
+
+    transition: 200ms;
+}
+
+.button-primary:hover {
+    transition: 200ms;
+    border-color: var(--primary);
+    background-color: white;
+    color: var(--primary);
+}
+
+.bg {
+    background-color: gray;
+}
+
+#main-header {
+    background: url('../img/logo-header.png') no-repeat;
+}
