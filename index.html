@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AEP</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="min-vh-w-100">
@@ -22,16 +22,186 @@
         </main>
     </div>
 
-    <div id="container-principal" class="row min-vh-w-100">
-        <nav id="side-bar" class="col-3 bg-info"></nav>
-        <div class="col-9 p-0">
-            <header id="main-header" class="bg-danger"></header>
-            <main></main>
+    <div id="container-principal" class="d-flex min-vh-w-100">
+        <div id="side-bar" class="col-2 p-0">
+            <div id="container-dados-profissional" class="d-flex pt-5 pb-1 flex-column align-items-center">
+                <h3>Professor</h3>
+                <span>Alexandre Moreno</span>
+                <button id="button-logout" class="ml-auto mt-4 d-flex align-items-center justify-content-between">
+                    <span class="mr-1">Logout</span>
+                    <svg style="transform: translateY(1px);" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-box-arrow-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+                        <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+                    </svg>    
+                </button>
+            </div>
+            <nav class="d-flex flex-column px-2 mt-4 pb-3 border-bottom-gray">
+                <div id="item-laboratorios" class="d-flex align-items-center item-lista-ativo">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-columns-gap" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M6 1H1v3h5V1zM1 0a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H1zm14 12h-5v3h5v-3zm-5-1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5zM6 8H1v7h5V8zM1 7a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H1zm14-6h-5v7h5V1zm-5-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1h-5z"/>
+                    </svg>
+                    <span class="ml-4">Laboratórios</span>
+                </div>
+                <div id="item-reserva-simples" class="d-flex align-items-center">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-journal" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z"/>
+                        <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"/>
+                    </svg>
+                    <span class="ml-4">Reservas simples</span>
+                </div>
+                <div id="item-reserva-recorrente" class="d-flex align-items-center">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-journals" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 2h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2h1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1H1a2 2 0 0 1 2-2z"/>
+                        <path d="M5 0h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2v-1a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1H3a2 2 0 0 1 2-2zM1 6v-.5a.5.5 0 0 1 1 0V6h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V9h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"/>
+                    </svg>
+                    <span class="ml-4">Reservas recorrentes</span>
+                </div>
+            </nav>
+        </div>
+        <div class="col-10 p-0">
+            <header id="main-header" class="p-0 m-0"></header>
+            <main id="container-main" class="d-flex flex-column border-gray justify-content-center">
+                <div id="container-laboratorios" class="d-flex d-none justify-content-around align-items-center">
+                    <div id="lab-blocos" class="container-lista col-2 border-gray p-2">
+                        <p>Blocos</p>
+                        <p>Bloco 1</p>
+                        <p class="item-bloco-ativo">Bloco 2</p>
+                        <p>Bloco 3</p>
+                        <p>Bloco 4</p>
+                        <p>Bloco 5</p>
+                    </div>
+                    <div id="lab-horarios" class="col-8 border-gray p-2">
+                        <div id="turnos-lab" class="d-flex justify-content-around">
+                            <button id="btn-matutino-lab" class="button-horario button-horario-ativo">Matutino</button>
+                            <button id="btn-vespertino-lab" class="button-horario">Vespertino</button>
+                            <button id="btn-noturno-lab" class="button-horario">Noturno</button>
+                        </div>
+
+                        <div class="row justify-content-around p-4" >
+                            <div class="text-center flex-column p-2 border-gray w-50 col-5 m-2">
+                                <p class="mb-2 font-weight-bold">Lab 1</p>
+                                <div class="d-flex justify-content-between">
+                                   <div class="col-6">
+                                       <div> 
+                                           <p>Esoft-6s</p>
+                                           <p>Arthur</p>
+                                           <p>Gerenciamento de configuração</p>
+                                       </div>
+                                   </div>
+                                   <div class="col-6">
+                                    <div> 
+                                        <p>Esoft-6s</p>
+                                        <p>Arthur</p>
+                                        <p>Gerenciamento de configuração</p>
+                                    </div>
+                                </div> 
+                                </div>
+                            </div>
+
+                            <div class="text-center flex-column p-2 border-gray w-50 col-5 m-2">
+                                <p class="mb-2 font-weight-bold">Lab 1</p>
+                                <div class="d-flex justify-content-between">
+                                   <div class="col-6">
+                                       <div> 
+                                           <p>Esoft-6s</p>
+                                           <p>Arthur</p>
+                                           <p>Gerenciamento de configuração</p>
+                                       </div>
+                                   </div>
+                                   <div class="col-6">
+                                    <div> 
+                                        <p>Esoft-6s</p>
+                                        <p>Arthur</p>
+                                        <p>Gerenciamento de configuração</p>
+                                    </div>
+                                </div> 
+                                </div>
+                            </div>
+
+                            <div class="text-center flex-column p-2 border-gray w-50 col-5 m-2">
+                                <p class="mb-2 font-weight-bold">Lab 1</p>
+                                <div class="d-flex justify-content-between">
+                                   <div class="col-6">
+                                       <div> 
+                                           <p>Esoft-6s</p>
+                                           <p>Arthur</p>
+                                           <p>Gerenciamento de configuração</p>
+                                       </div>
+                                   </div>
+                                   <div class="col-6">
+                                    <div> 
+                                        <p>Esoft-6s</p>
+                                        <p>Arthur</p>
+                                        <p>Gerenciamento de configuração</p>
+                                    </div>
+                                </div> 
+                                </div>
+                            </div>
+
+                            <div class="text-center flex-column p-2 border-gray w-50 col-5 m-2">
+                                <p class="mb-2 font-weight-bold">Lab 1</p>
+                                <div class="d-flex justify-content-between">
+                                   <div class="col-6">
+                                       <div> 
+                                           <p>Esoft-6s</p>
+                                           <p>Arthur</p>
+                                           <p>Gerenciamento de configuração</p>
+                                       </div>
+                                   </div>
+                                   <div class="col-6">
+                                    <div> 
+                                        <p>Esoft-6s</p>
+                                        <p>Arthur</p>
+                                        <p>Gerenciamento de configuração</p>
+                                    </div>
+                                </div> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="container-reserva-simples" class="d-flex d-none justify-content-around align-items-center" >
+                    
+                </div>
+                <div id="container-reserva-recorrente" class="d-flex d-none justify-content-around align-items-center">
+                    <div id="recorrentes-blocos" class="container-lista col-2 border-gray p-2">
+                        <p>Blocos</p>
+                        <p>Bloco 1</p>
+                        <p class="item-bloco-ativo">Bloco 2</p>
+                        <p>Bloco 3</p>
+                        <p>Bloco 4</p>
+                        <p>Bloco 5</p>
+                    </div>
+                    <div id="recorrentes-labs" class="container-lista col-2 border-gray p-2">
+                        <p>Laboratórios</p>
+                        <p>Laboratório 1</p>
+                        <p class="item-bloco-ativo">Laboratório 2</p>
+                        <p>Laboratório 3</p>
+                        <p>Laboratório 4</p>
+                        <p>Laboratório 5</p>
+                        <p>Laboratório 6</p>
+                        <p>Laboratório 7</p>
+                    </div>
+                    <div class="p-3 border-gray col-5 text-center">
+                        <p class="mb-2">Selecione o dia da semana</p>
+                        <div id="lista-button-dias" class="d-flex flex-column">
+                            <button class="button-primary">Domingo</button>
+                            <button class="button-primary">Segunda-feira</button>
+                            <button class="button-primary">Terça-feira</button>
+                            <button class="button-primary">Quarta-feira</button>
+                            <button class="button-primary">Quinta-feira</button>
+                            <button class="button-primary">Sexta-feira</button>
+                            <button class="button-primary">Sábado</button>    
+                        </div>
+                    </div>
+                </div>
+            </main>
         </div>
     </div>
     
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

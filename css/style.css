@@ -1,5 +1,22 @@
 :root {
     --primary: #3949D7;
+    --white: #ffffff;
+    --black: #000000;
+    --gray: #EEEEEE;
+    --bg-focus-prymary: #E3F2FD;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 0;
+}
+
+*:focus {
+    outline: none !important;
 }
 
 .min-vh-w-100 {
@@ -38,24 +55,157 @@ input[type="text"], input[type="password"] {
 .button-primary {
     border: 1px solid transparent;
     background-color: var(--primary);
-    color: white;
+    color: var(--white);
     padding: 6px 10px;
     border-radius: 4px;
 
     transition: 200ms;
 }
 
+#button-logout {
+    font-size: 14px;
+    background: none;
+    border: none;
+    color: var(--white);
+    border-radius: 3px;
+    transition: 300ms;
+}
+
+#button-logout:hover {
+   opacity: 0.75;
+   transition: 300ms;
+}
+
 .button-primary:hover {
     transition: 200ms;
     border-color: var(--primary);
-    background-color: white;
+    background-color: var(--white);
     color: var(--primary);
-}
-
-.bg {
-    background-color: gray;
 }
 
 #main-header {
     background: url('../img/logo-header.png') no-repeat;
+    background-size: cover;
+    height: 230px;
+}
+
+.border-gray {
+    border: 1px solid var(--gray);
+}
+
+.border-bottom-gray {
+    border-bottom: 1px solid var(--gray);
+}
+
+#container-dados-profissional {
+    background-color: #0B6FAD;
+    color: var(--white);
+}
+
+#container-main {
+    min-height: calc(100vh - 230px);
+}
+
+
+#side-bar nav div {
+    color: var(--black);
+    font-weight: 500;
+    opacity: 0.7;
+    border-radius: 3px;
+    padding: 4px;
+    margin: 4px 0;
+
+    cursor: pointer;
+}
+
+.item-lista-ativo {
+    color: var(--primary) !important;
+    font-weight: 600;
+    background-color: var(--bg-focus-prymary);
+    transition: 400ms;
+}
+
+.title-lista {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 5px 10px;
+}
+
+.bg-gray {
+    background-color: var(--gray);
+}
+
+.container-lista p:nth-child(1) {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.container-lista p:nth-child(2n + 3) {
+    background-color: var(--bg-focus-prymary);
+    color: var(--primary);
+}
+
+.container-lista p:nth-child(n + 2):hover {
+    border-color: #C3E0E6;
+    cursor: pointer;
+    transition: 300ms;
+}
+
+.item-bloco-ativo {
+    border-color: var(--primary) !important;
+}
+
+.container-lista p {
+    text-align: center;
+    padding: 5px 0;
+    border: 1px solid transparent;
+
+    transition: 300ms;
+}
+
+.d-none {
+    display: none !important;
+}
+
+.button-horario {
+    background-color: var(--primary);
+    border: 1px solid transparent;
+    color:  var(--white);
+    padding: 6px 12px;
+    border-radius: 2px;
+    transition: 300ms;
+}
+
+.button-horario:hover {
+    border-radius: 12px;
+    transition: 300ms;
+}
+
+.button-horario-ativo {
+    background-color: var(--white);
+    color:  var(--primary);
+    border-color: var(--primary);
+}
+
+#lab-horarios {
+    height: 360px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#lista-button-dias button{
+    border: 1px solid transparent;
+    background-color: var(--primary);
+    margin: 5px 0;
+    padding: 4px 0;
+    color: var(--white);
+    border-radius: 2px;
+
+    transition: 300ms;
+}
+
+#lista-button-dias button:hover {
+    background-color: var(--white);
+    border-color: var(--primary);
+    color: var(--primary);
 }
