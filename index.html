@@ -6,13 +6,14 @@
     <title>AEP</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="jsCalendar_v1.4.4/jsCalendar.css">
 </head>
 <body class="min-vh-w-100">
-    <div class="d-none" id="container-login">
+    <main class="" id="container-login">
         <main class="login-container py-5">
             <img src="/img/logo-unicesumar-login.png" alt="Logo Unicesumar"/>
-            <div class="d-flex flex-column w-50">
-                <input class="mt-3" type="text" placeholder="RA"/>
+            <div id="inputs" class="d-flex flex-column w-50">
+                <input class="mt-3" type="text" placeholder="Usuário"/>
                 <input class="mt-3" type="password" placeholder="Senha"/>
 
                 <div class="mt-4 mb-3">
@@ -20,13 +21,13 @@
                 </div>
             </div>
         </main>
-    </div>
+    </main>
 
-    <div id="container-principal" class="d-flex min-vh-w-100">
+    <main id="container-principal" class="d-none d-flex min-vh-w-100">
         <div id="side-bar" class="col-2 p-0">
             <div id="container-dados-profissional" class="d-flex pt-5 pb-1 flex-column align-items-center">
-                <h3>Professor</h3>
-                <span>Alexandre Moreno</span>
+                <p id="tipo-user">Professor</p>
+                <span id="user">Alexandre Moreno</span>
                 <button id="button-logout" class="ml-auto mt-4 d-flex align-items-center justify-content-between">
                     <span class="mr-1">Logout</span>
                     <svg style="transform: translateY(1px);" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-box-arrow-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -58,150 +59,140 @@
                 </div>
             </nav>
         </div>
-        <div class="col-10 p-0">
+        <main class="col-10 p-0">
             <header id="main-header" class="p-0 m-0"></header>
             <main id="container-main" class="d-flex flex-column border-gray justify-content-center">
-                <div id="container-laboratorios" class="d-flex d-none justify-content-around align-items-center">
-                    <div id="lab-blocos" class="container-lista col-2 border-gray p-2">
-                        <p>Blocos</p>
-                        <p>Bloco 1</p>
-                        <p class="item-bloco-ativo">Bloco 2</p>
-                        <p>Bloco 3</p>
-                        <p>Bloco 4</p>
-                        <p>Bloco 5</p>
+                <section id="container-laboratorios" class="d-flex d-none justify-content-around align-items-center">
+                    <div class="blocos container-lista col-2 border-gray p-2">
+    
                     </div>
                     <div id="lab-horarios" class="col-8 border-gray p-2">
-                        <div id="turnos-lab" class="d-flex justify-content-around">
-                            <button id="btn-matutino-lab" class="button-horario button-horario-ativo">Matutino</button>
-                            <button id="btn-vespertino-lab" class="button-horario">Vespertino</button>
-                            <button id="btn-noturno-lab" class="button-horario">Noturno</button>
+                        <div class=" turnos d-flex justify-content-around">
+                            <button class="btn-matutino-lab button-horario button-horario-ativo">Matutino</button>
+                            <button class="btn-vespertino-lab button-horario">Vespertino</button>
+                            <button class="btn-noturno-lab button-horario">Noturno</button>
                         </div>
 
-                        <div class="row justify-content-around p-4" >
-                            <div class="text-center flex-column p-2 border-gray w-50 col-5 m-2">
-                                <p class="mb-2 font-weight-bold">Lab 1</p>
-                                <div class="d-flex justify-content-between">
-                                   <div class="col-6">
-                                       <div> 
-                                           <p>Esoft-6s</p>
-                                           <p>Arthur</p>
-                                           <p>Gerenciamento de configuração</p>
-                                       </div>
-                                   </div>
-                                   <div class="col-6">
-                                    <div> 
-                                        <p>Esoft-6s</p>
-                                        <p>Arthur</p>
-                                        <p>Gerenciamento de configuração</p>
-                                    </div>
-                                </div> 
-                                </div>
-                            </div>
-
-                            <div class="text-center flex-column p-2 border-gray w-50 col-5 m-2">
-                                <p class="mb-2 font-weight-bold">Lab 1</p>
-                                <div class="d-flex justify-content-between">
-                                   <div class="col-6">
-                                       <div> 
-                                           <p>Esoft-6s</p>
-                                           <p>Arthur</p>
-                                           <p>Gerenciamento de configuração</p>
-                                       </div>
-                                   </div>
-                                   <div class="col-6">
-                                    <div> 
-                                        <p>Esoft-6s</p>
-                                        <p>Arthur</p>
-                                        <p>Gerenciamento de configuração</p>
-                                    </div>
-                                </div> 
-                                </div>
-                            </div>
-
-                            <div class="text-center flex-column p-2 border-gray w-50 col-5 m-2">
-                                <p class="mb-2 font-weight-bold">Lab 1</p>
-                                <div class="d-flex justify-content-between">
-                                   <div class="col-6">
-                                       <div> 
-                                           <p>Esoft-6s</p>
-                                           <p>Arthur</p>
-                                           <p>Gerenciamento de configuração</p>
-                                       </div>
-                                   </div>
-                                   <div class="col-6">
-                                    <div> 
-                                        <p>Esoft-6s</p>
-                                        <p>Arthur</p>
-                                        <p>Gerenciamento de configuração</p>
-                                    </div>
-                                </div> 
-                                </div>
-                            </div>
-
-                            <div class="text-center flex-column p-2 border-gray w-50 col-5 m-2">
-                                <p class="mb-2 font-weight-bold">Lab 1</p>
-                                <div class="d-flex justify-content-between">
-                                   <div class="col-6">
-                                       <div> 
-                                           <p>Esoft-6s</p>
-                                           <p>Arthur</p>
-                                           <p>Gerenciamento de configuração</p>
-                                       </div>
-                                   </div>
-                                   <div class="col-6">
-                                    <div> 
-                                        <p>Esoft-6s</p>
-                                        <p>Arthur</p>
-                                        <p>Gerenciamento de configuração</p>
-                                    </div>
-                                </div> 
-                                </div>
-                            </div>
+                        <div id="container-horarios" class="row justify-content-around p-4" >
+                            
                         </div>
                     </div>
-                </div>
-                <div id="container-reserva-simples" class="d-flex d-none justify-content-around align-items-center" >
-                    
-                </div>
-                <div id="container-reserva-recorrente" class="d-flex d-none justify-content-around align-items-center">
-                    <div id="recorrentes-blocos" class="container-lista col-2 border-gray p-2">
-                        <p>Blocos</p>
-                        <p>Bloco 1</p>
-                        <p class="item-bloco-ativo">Bloco 2</p>
-                        <p>Bloco 3</p>
-                        <p>Bloco 4</p>
-                        <p>Bloco 5</p>
+                </section>
+                <section id="container-reserva-simples" class="d-flex d-none justify-content-around align-items-center" >
+                    <div class="blocos container-lista col-2 border-gray p-2">
                     </div>
-                    <div id="recorrentes-labs" class="container-lista col-2 border-gray p-2">
-                        <p>Laboratórios</p>
-                        <p>Laboratório 1</p>
-                        <p class="item-bloco-ativo">Laboratório 2</p>
-                        <p>Laboratório 3</p>
-                        <p>Laboratório 4</p>
-                        <p>Laboratório 5</p>
-                        <p>Laboratório 6</p>
-                        <p>Laboratório 7</p>
+                    <div class="labs container-lista col-2 border-gray p-2">
+                    </div>
+                    <div class="px-5 py-2 mt-1 border-gray">
+                        <div class="turnos d-flex justify-content-around mb-3">
+                            <button class="btn-matutino-lab button-horario button-horario-ativo">Matutino</button>
+                            <button class="btn-vespertino-lab button-horario">Vespertino</button>
+                            <button class="btn-noturno-lab button-horario">Noturno</button>
+                        </div>
+                        <div id="calendario" class="mx-5 material-theme blue"></div>
+                    </div>
+                </section>
+                <section id="container-reserva-recorrente" class="d-flex d-none justify-content-around align-items-center">
+                    <div class="blocos container-lista col-2 border-gray p-2">
+                    </div>
+                    <div  class="labs container-lista col-2 border-gray p-2">
                     </div>
                     <div class="p-3 border-gray col-5 text-center">
                         <p class="mb-2">Selecione o dia da semana</p>
                         <div id="lista-button-dias" class="d-flex flex-column">
-                            <button class="button-primary">Domingo</button>
-                            <button class="button-primary">Segunda-feira</button>
-                            <button class="button-primary">Terça-feira</button>
-                            <button class="button-primary">Quarta-feira</button>
-                            <button class="button-primary">Quinta-feira</button>
-                            <button class="button-primary">Sexta-feira</button>
-                            <button class="button-primary">Sábado</button>    
+                            <button class="button-primary" data-toggle="modal" data-target="#modalReservaRecorrente">Domingo</button>
+                            <button class="button-primary" data-toggle="modal" data-target="#modalReservaRecorrente">Segunda-feira</button>
+                            <button class="button-primary" data-toggle="modal" data-target="#modalReservaRecorrente">Terça-feira</button>
+                            <button class="button-primary" data-toggle="modal" data-target="#modalReservaRecorrente">Quarta-feira</button>
+                            <button class="button-primary" data-toggle="modal" data-target="#modalReservaRecorrente">Quinta-feira</button>
+                            <button class="button-primary" data-toggle="modal" data-target="#modalReservaRecorrente">Sexta-feira</button>
+                            <button class="button-primary" data-toggle="modal" data-target="#modalReservaRecorrente">Sábado</button>    
                         </div>
                     </div>
-                </div>
+                </section>
             </main>
+        </main>
+    </main>
+
+    <!-- Modal Reserva simples -->
+    <div class="modal fade" id="modalReservaSimples" tabindex="-1" role="dialog" aria-labelledby="modalReservaSimplesLabel" aria-hidden="true">
+        <button id="btn-modal-simples" class="d-none" data-toggle="modal" data-target="#modalReservaSimples"></button>
+
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="text-center" id="modalReservaSimplesLabel">Reserva simples</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                <div id="horarios-modal-simples" class="d-flex justify-content-around ">
+                    <button class="btn-primeiro-horario w-25 button-horario button-horario-ativo">1° Horário</button>
+                    <button class="btn-segundo-horario w-25 button-horario">2° Horário</button>
+                </div>
+                <div class="d-flex justify-content-around mt-4">
+                    <div class="cursos container-lista col-4 border-gray p-2">
+                    </div>
+    
+                    <div class="turmas container-lista col-4 border-gray p-2">
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Fechar</button>
+            <button onclick="salvarReservaSimples()" type="button" class="btn btn-outline-success">Salvar</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Modal Reserva Recorrente -->
+    <div class="modal fade" id="modalReservaRecorrente" tabindex="-1" role="dialog" aria-labelledby="modalReservaRecorrenteLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="text-center" id="modalReservaRecorrenteLabel">Reserva recorrente</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                <div id="horarios-modal-recorrente" class="d-flex justify-content-around ">
+                    <button class="btn-primeiro-horario w-25 button-horario button-horario-ativo">1° Horário</button>
+                    <button class="btn-segundo-horario w-25 button-horario">2° Horário</button>
+                </div>
+                <div class="d-flex justify-content-around mt-4">
+                    <div class="cursos container-lista col-4 border-gray p-2">
+                    </div>
+    
+                    <div class="turmas container-lista col-4 border-gray p-2">
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Fechar</button>
+            <button onclick="salvarReservaSimples()" type="button" class="btn btn-outline-success">Salvar</button>
+            </div>
+        </div>
         </div>
     </div>
     
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="js/script.js"></script>
+    <script src="jsCalendar_v1.4.4/jsCalendar.js"></script>
+    <script src="jsCalendar_v1.4.4/jsCalendar.lang.pt.js"></script>
+        
+    <!--Custom js-->
+    <script src="js/clickListas.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/logout.js"></script>
+    <script src="js/onLoadPage.js"></script>
+    <script src="js/calendario.js"></script>
+    <script src="js/montarListas.js"></script>
+    <!--Custom js-->
 </body>
 </html>
