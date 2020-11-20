@@ -9,6 +9,7 @@
 body {
     margin: 0;
     padding: 0;
+    min-width: 1200px !important;
 }
 
 p {
@@ -86,7 +87,7 @@ input[type="text"], input[type="password"] {
 #main-header {
     background: url('../img/logo-header.png') no-repeat;
     background-size: cover;
-    height: 230px;
+    height: 220px;
 }
 
 .border-gray {
@@ -165,6 +166,7 @@ input[type="text"], input[type="password"] {
 
 .d-none {
     display: none !important;
+    opacity: 0;
 }
 
 .button-horario {
